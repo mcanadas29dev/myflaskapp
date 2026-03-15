@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <title>{% block title %}Healthwana — Evidence-Based Nutrition Coaching{% endblock %}</title>
+  <meta name="description" content="{% block description %}1:1 personalised, evidence-based nutrition coaching for adults aged 18–65. Delivered by a Cambridge-trained scientist.{% endblock %}">
+
+  <!-- UIkit -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.0/dist/css/uikit.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.0/dist/js/uikit.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.0/dist/js/uikit-icons.min.js" defer></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+
+<!-- ============================================
+     NAVBAR
+     ============================================ -->
+<header id="menu_nav" uk-sticky="top: 0; animation: uk-animation-slide-top;">
+  <div class="uk-container">
+    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+
+      <div class="uk-navbar-left">
+        <a href="{{ url_for('main.index') }}" class="uk-navbar-item uk-logo">Healthwana</a>
+      </div>
+
+      <div class="uk-navbar-center uk-visible@m">
+        <ul class="uk-navbar-nav">
+          <li><a href="{{ url_for('main.index') }}#about">About</a></li>
+          <li><a href="{{ url_for('main.index') }}#philosophy">Philosophy</a></li>
+          <li><a href="{{ url_for('main.index') }}#services">Services</a></li>
+          <li><a href="{{ url_for('main.index') }}#howitworks">How it Works</a></li>
+          <li><a href="{{ url_for('main.index') }}#results">Results</a></li>
+          <li><a href="{{ url_for('main.index') }}#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="uk-navbar-right uk-visible@m">
+        <a href="{{ url_for('main.index') }}#contact" class="btn-nav-cta">Book a Consultation</a>
+      </div>
+
+      <div class="uk-navbar-right uk-hidden@m">
+        <a class="uk-navbar-toggle" uk-toggle="target: #mobile-menu" href="#" aria-label="Open menu">
+          <span uk-navbar-toggle-icon></span>
+        </a>
+      </div>
+
+    </nav>
+  </div>
+
+  <!-- Mobile off-canvas -->
+  <div id="mobile-menu" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+      <button class="uk-offcanvas-close" type="button" uk-close aria-label="Close menu"></button>
+      <p class="uk-text-meta uk-text-uppercase uk-margin-top"
+         style="letter-spacing:0.1em; font-size:0.7rem; color:rgba(255,255,255,0.4);">Menu</p>
+      <ul class="uk-nav uk-nav-default uk-margin-top">
+        <li><a href="{{ url_for('main.index') }}#about">About</a></li>
+        <li><a href="{{ url_for('main.index') }}#philosophy">Philosophy</a></li>
+        <li><a href="{{ url_for('main.index') }}#services">Services</a></li>
+        <li><a href="{{ url_for('main.index') }}#howitworks">How it Works</a></li>
+        <li><a href="{{ url_for('main.index') }}#results">Results</a></li>
+        <li><a href="{{ url_for('main.index') }}#faq">FAQ</a></li>
+        <li class="uk-nav-divider"></li>
+        <li>
+          <a href="{{ url_for('main.index') }}#contact"
+             class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-top">
+            Book a Consultation
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================
+     PAGE CONTENT
+     ============================================ -->
+{% block content %}{% endblock %}
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <div class="uk-container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-name">Healthwana</div>
+        <div class="footer-brand-tagline">Science, not trends.</div>
+        <p class="footer-desc">
+          Evidence-based nutrition coaching led by a Cambridge-trained scientist.
+          Personalised protocols grounded in peer-reviewed research.
+        </p>
+        <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.72rem; color:rgba(255,255,255,0.35);">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--color-gold);flex-shrink:0;"></span>
+          Cambridge-trained Scientist
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="{{ url_for('main.index') }}#about">About</a></li>
+          <li><a href="{{ url_for('main.index') }}#philosophy">Philosophy</a></li>
+          <li><a href="{{ url_for('main.index') }}#services">Services</a></li>
+          <li><a href="{{ url_for('main.index') }}#howitworks">How it Works</a></li>
+          <li><a href="{{ url_for('main.index') }}#results">Results</a></li>
+          <li><a href="{{ url_for('main.index') }}#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Programmes</div>
+        <ul class="footer-links">
+          <li><a href="{{ url_for('main.index') }}#services">Fat Loss</a></li>
+          <li><a href="{{ url_for('main.index') }}#services">Muscle &amp; Strength</a></li>
+          <li><a href="{{ url_for('main.index') }}#services">Anti-Ageing</a></li>
+          <li><a href="{{ url_for('main.index') }}#services">Performance</a></li>
+          <li><a href="{{ url_for('main.index') }}#services">Disease Prevention</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="{{ url_for('main.privacy') }}">Privacy Policy</a></li>
+          <li><a href="{{ url_for('main.privacy') }}#terms">Terms of Service</a></li>
+          <li><a href="{{ url_for('main.privacy') }}#cookies">Cookie Policy</a></li>
+        </ul>
+        <div class="footer-col-title uk-margin-top">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@healthwana.com">hello@healthwana.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Healthwana. All rights reserved.</span>
+      <span><em>"Science, not trends."</em></span>
+      <span>
+        <a href="{{ url_for('main.privacy') }}">Privacy</a> &middot;
+        <a href="{{ url_for('main.privacy') }}#terms">Terms</a>
+      </span>
+    </div>
+
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

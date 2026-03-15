@@ -1,31 +1,534 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Healthwana</title>
+{% extends "base.html" %}
 
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/uikit@3.19.0/dist/css/uikit.min.css" />
+{% block content %}
 
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.0/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.19.0/dist/js/uikit-icons.min.js"></script>
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section id="hero">
+  <div class="hero-bg-line" aria-hidden="true"></div>
 
-</head>
+  <div class="uk-container">
+    <div class="uk-grid-large uk-flex-middle" uk-grid>
 
-<body>
+      <!-- Text column -->
+      <div class="uk-width-1-2@l">
 
-<div class="uk-container uk-margin-large-top">
+        <div class="hero-badge fade-up">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Evidence-Based Nutrition
+        </div>
 
-<h1 class="uk-heading-medium">Healthwana</h1>
+        <h1 class="hero-title fade-up">
+          1:1 Personalised,<br>
+          <em>Evidence-Based</em><br>
+          Nutrition Coaching
+        </h1>
 
-<p class="uk-text-lead">
-Flask funcionando correctamente 🚀
-</p>
+        <p class="hero-sub fade-up">
+          For adults aged 1865. Delivered by a Cambridge-trained scientist
+          specialising in fat loss, muscle gain, anti-ageing and performance
+          optimisation.
+        </p>
 
-<button class="uk-button uk-button-primary">
-UIkit activo
-</button>
+        <div class="hero-actions fade-up">
+          <a href="#contact" class="btn-primary">Book your Consultation</a>
+          <a href="#howitworks" class="btn-secondary">How it Works</a>
+        </div>
 
-</div>
+        <div class="hero-cred-strip fade-up" aria-label="Professional Credentials">
+          <div class="cred-item">
+            <svg class="cred-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            PhD in Cancer Research, University of Cambridge
+          </div>
+          <div class="cred-item">
+            <svg class="cred-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            MPhil in Cell Biology, University of Cambridge
+          </div>
+          <div class="cred-item">
+            <svg class="cred-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            BSc in Molecular Biology and Genetics
+          </div>
+          <div class="cred-item">
+            <svg class="cred-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Specialist in Nutritional Science &amp; Metabolic Optimisation
+          </div>
+        </div>
 
-</body>
-</html>
+      </div>
+
+      <!-- Image column -->
+      <div class="uk-width-1-2@l">
+        <div class="hero-img-wrap">
+          <img
+            src="{{ url_for('static', filename='images/healthcare.jpeg') }}"
+            alt="Nutritionist at work Cambridge-trained scientist"
+            width="640" height="560"
+            loading="eager">
+          <div class="hero-img-stat" aria-label="Key stat">
+            <div class="stat-val">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section id="about">
+  <div class="uk-container">
+    <div class="about-grid">
+
+      <div class="about-img-wrap fade-up">
+        <img
+          src="{{ url_for('static', filename='images/adn.webp') }}"
+          alt="About Healthwana  science-led approach"
+          width="580" height="520"
+          loading="lazy">
+        <div class="about-img-badge">
+          <div class="badge-val">PhD</div>
+          <div class="badge-label">Cambridge</div>
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <span class="section-label">Who We Are</span>
+
+        <h2 class="about-title">
+          Led by a scientist,<br>
+          <em>not influencers.</em>
+        </h2>
+
+        <p class="about-body">
+          Healthwana was founded on a single conviction: your health deserves more than
+          trend-driven advice. Our founder holds advanced qualifications in molecular biology,
+          cell biology, metabolism, nutritional science, and cancer research pathology  all
+          from the University of Cambridge.
+        </p>
+        <p class="about-body">
+          Every recommendation we make is rooted in peer-reviewed science and tailored to your
+          unique physiology, lifestyle and goals. No fads. No shortcuts. Just honest,
+          evidence-based guidance that produces lasting results.
+        </p>
+
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="val">100%</div>
+            <div class="lbl">Evidence-Based</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">10+</div>
+            <div class="lbl">Years Research</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">500+</div>
+            <div class="lbl">Clients Coached</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">0</div>
+            <div class="lbl">Fad Diets Used</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     PHILOSOPHY
+     ============================================ -->
+<section id="philosophy">
+  <div class="uk-container">
+
+    <span class="section-label" style="color:rgba(255,255,255,0.4);">Our Approach</span>
+
+    <h2 class="philosophy-title">
+      Science is the only<br>
+      <em>protocol we follow.</em>
+    </h2>
+
+    <p class="philosophy-lead">
+      We reject diet culture, detox myths and supplement industry noise. Our methodology
+      is built entirely on peer-reviewed literature  interpreted by someone who spent
+      years producing it.
+    </p>
+
+    <div class="pillars-grid">
+
+      <div class="pillar-card fade-up">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Metabolic Precision</div>
+        <p class="pillar-body">We analyse your individual metabolic rate, hormonal profile, and dietary history to create a plan that works with your biology, not against it.</p>
+      </div>
+
+      <div class="pillar-card fade-up">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Peer-Reviewed Evidence</div>
+        <p class="pillar-body">Every recommendation is backed by published research. We cite our sources and explain the science so you understand the why behind every choice.</p>
+      </div>
+
+      <div class="pillar-card fade-up">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Long-Term Thinking</div>
+        <p class="pillar-body">We optimise for sustainable outcomes  body composition, longevity, and metabolic health  not crash results that reverse within weeks.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     SERVICES
+     ============================================ -->
+<section id="services">
+  <div class="uk-container">
+
+    <div class="services-header">
+      <div>
+        <span class="section-label">What We Offer</span>
+        <h2 class="services-title">Our Programmes</h2>
+      </div>
+      <a href="#contact" class="btn-secondary uk-visible@m">View all &rarr;</a>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card fade-up">
+        <div class="service-icon" aria-hidden="true">&#x1F525;</div>
+        <h3 class="service-title">Fat Loss Programme</h3>
+        <p class="service-body">
+          Sustainable, science-driven fat loss that preserves muscle and metabolic health.
+          Personalised caloric and macronutrient targets based on your physiology.
+        </p>
+        <span class="service-tag">12-week Programme</span>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon" aria-hidden="true">&#x1F4AA;</div>
+        <h3 class="service-title">Muscle &amp; Strength</h3>
+        <p class="service-body">
+          Optimise protein synthesis and recovery through precision nutrition. Designed
+          to work in tandem with your training programme for maximum hypertrophy.
+        </p>
+        <span class="service-tag">16-week Programme</span>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon" aria-hidden="true">&#x1F9EC;</div>
+        <h3 class="service-title">Anti-Ageing Nutrition</h3>
+        <p class="service-body">
+          Nutrient strategies targeting cellular health, inflammation reduction and
+          longevity pathways  based on the latest geroscience research.
+        </p>
+        <span class="service-tag">Ongoing Coaching</span>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon" aria-hidden="true">&#x26A1;</div>
+        <h3 class="service-title">Performance Optimisation</h3>
+        <p class="service-body">
+          Fuel your sport or professional life. Tailored periodisation of nutrition
+          to peak performance windows, recovery and cognitive output.
+        </p>
+        <span class="service-tag">Sport Specific</span>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon" aria-hidden="true">&#x1F6E1;&#xFE0F;</div>
+        <h3 class="service-title">Disease Prevention</h3>
+        <p class="service-body">
+          Preventative nutrition for cardiovascular health, type-2 diabetes risk
+          reduction, and metabolic syndrome  grounded in clinical evidence.
+        </p>
+        <span class="service-tag">Health-Focused</span>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-icon" aria-hidden="true">&#x1F4CB;</div>
+        <h3 class="service-title">One-Off Consultation</h3>
+        <p class="service-body">
+          A single in-depth session to review your goals, current diet and health
+          markers. Leaves you with a clear, actionable evidence-based framework.
+        </p>
+        <span class="service-tag">90-min Session</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     HOW IT WORKS
+     ============================================ -->
+<section id="howitworks">
+  <div class="uk-container">
+    <span class="section-label">The Process</span>
+    <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3vw,2.6rem); font-weight:700;">
+      Simple. Structured. Scientific.
+    </h2>
+
+    <div class="steps-grid">
+
+      <div class="step-item fade-up">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Book a Consultation</h3>
+        <p class="step-body">Complete our intake form and book your initial consultation. We'll review your health history before we meet.</p>
+      </div>
+
+      <div class="step-item fade-up">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Deep-Dive Assessment</h3>
+        <p class="step-body">A comprehensive 90-minute session covering your goals, lifestyle, health markers, and current nutritional habits.</p>
+      </div>
+
+      <div class="step-item fade-up">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Your Personal Protocol</h3>
+        <p class="step-body">Within 5 working days you receive a fully personalised, evidence-based nutrition plan built around your life.</p>
+      </div>
+
+      <div class="step-item fade-up">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Ongoing Support</h3>
+        <p class="step-body">Regular check-ins, data reviews, and plan refinements ensure you stay on track and continue to progress.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     RESULTS / TESTIMONIALS
+     ============================================ -->
+<section id="results">
+  <div class="uk-container">
+    <span class="section-label">Client Results</span>
+    <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3vw,2.6rem); margin-bottom:0.5rem;">
+      Real people. Real results.
+    </h2>
+    <p style="color:var(--color-muted); font-size:0.9rem; max-width:480px;">
+      Every result is different. What stays constant is the science and the commitment
+      to getting it right for you.
+    </p>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card fade-up">
+        <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"I lost 14 kg in 14 weeks without ever feeling deprived. For the first time I understood why I was eating what I was eating  and that made all the difference."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">SL</div>
+          <div>
+            <div class="author-name">Sarah L.</div>
+            <div class="author-detail">Fat Loss Programme &middot; London</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"As a competitive cyclist, I needed precision. The periodised nutrition plan improved my FTP by 22 watts in 12 weeks. Extraordinary attention to detail."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">JM</div>
+          <div>
+            <div class="author-name">James M.</div>
+            <div class="author-detail">Performance Optimisation &middot; Manchester</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up">
+        <div class="stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">"The anti-ageing programme changed how I think about food entirely. My inflammation markers dropped significantly and my energy is the best it's been in years."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">AC</div>
+          <div>
+            <div class="author-name">Amanda C.</div>
+            <div class="author-detail">Anti-Ageing Nutrition &middot; Edinburgh</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="results-stats">
+      <div class="result-stat fade-up">
+        <div class="val">500+</div>
+        <div class="lbl">Clients Coached</div>
+      </div>
+      <div class="result-stat fade-up">
+        <div class="val">98%</div>
+        <div class="lbl">Client Satisfaction</div>
+      </div>
+      <div class="result-stat fade-up">
+        <div class="val">94%</div>
+        <div class="lbl">Goal Achievement Rate</div>
+      </div>
+      <div class="result-stat fade-up">
+        <div class="val">0</div>
+        <div class="lbl">Fad Diets Recommended</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     FAQ
+     ============================================ -->
+<section id="faq">
+  <div class="uk-container">
+    <div class="faq-layout">
+
+      <div class="faq-sticky">
+        <span class="section-label">FAQ</span>
+        <h2 class="faq-title">Questions &amp; Answers</h2>
+        <p class="faq-lead">
+          Can't find what you're looking for? Book a free 20-minute discovery call 
+          we're happy to answer any question before you commit.
+        </p>
+        <a href="#contact" class="faq-cta">Book a free call &rarr;</a>
+      </div>
+
+      <div>
+        <ul uk-accordion="multiple: true">
+
+          <li>
+            <a class="uk-accordion-title" href="#">Who is Healthwana designed for?</a>
+            <div class="uk-accordion-content">
+              Our programmes are designed for adults aged 1865 who want evidence-based guidance  whether you're a complete beginner or an experienced athlete. We tailor everything to your starting point, health history and goals.
+            </div>
+          </li>
+
+          <li>
+            <a class="uk-accordion-title" href="#">What makes Healthwana different from a regular dietitian?</a>
+            <div class="uk-accordion-content">
+              Our founder holds a PhD in Cancer Research and an MPhil in Cell Biology from Cambridge  with deep expertise in metabolic science at the molecular level. This allows us to go far beyond standard dietary advice and address the biological mechanisms behind your results.
+            </div>
+          </li>
+
+          <li>
+            <a class="uk-accordion-title" href="#">How long before I see results?</a>
+            <div class="uk-accordion-content">
+              Measurable changes typically appear within 46 weeks. Sustainable body composition changes (fat loss or muscle gain) usually become clearly visible by week 1012. Biomarker improvements (blood glucose, cholesterol, inflammation) can appear sooner.
+            </div>
+          </li>
+
+          <li>
+            <a class="uk-accordion-title" href="#">Do you offer online consultations?</a>
+            <div class="uk-accordion-content">
+              Yes. All of our consultations and coaching sessions are conducted online via video call, which means we can work with clients anywhere in the world. Our intake process and progress tracking are fully remote.
+            </div>
+          </li>
+
+          <li>
+            <a class="uk-accordion-title" href="#">What does a typical plan look like?</a>
+            <div class="uk-accordion-content">
+              You receive a personalised nutrition protocol that includes caloric and macronutrient targets, meal timing guidance, supplement recommendations (where warranted by evidence), and a food selection framework. Plans are adjusted at regular intervals based on your progress data.
+            </div>
+          </li>
+
+          <li>
+            <a class="uk-accordion-title" href="#">How much does it cost?</a>
+            <div class="uk-accordion-content">
+              Pricing varies depending on the programme and level of support. We discuss this transparently during your initial consultation. We offer a free 20-minute discovery call so there is no pressure to commit before you have all the information you need.
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     CONTACT / CTA
+     ============================================ -->
+<section id="contact">
+  <div class="uk-container">
+    <div class="contact-inner">
+
+      <span class="section-label" style="color:rgba(255,255,255,0.4); justify-content:center;">Get Started</span>
+      <h2 class="contact-title">
+        Ready to transform<br>
+        <em>your health?</em>
+      </h2>
+      <p class="contact-sub">
+        Book your initial consultation and take the first step towards evidence-based,
+        lasting results. No hard sell  just science.
+      </p>
+
+      <form class="contact-form" id="consultation-form" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Full Name <span aria-hidden="true">*</span></label>
+            <input class="form-control" type="text" id="name" name="name"
+              placeholder="Jane Smith" autocomplete="name" required maxlength="100">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address <span aria-hidden="true">*</span></label>
+            <input class="form-control" type="email" id="email" name="email"
+              placeholder="jane@example.com" autocomplete="email" required maxlength="254">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone (optional)</label>
+            <input class="form-control" type="tel" id="phone" name="phone"
+              placeholder="+44 7700 000000" autocomplete="tel" maxlength="25">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="goal">Primary Goal <span aria-hidden="true">*</span></label>
+            <select class="form-control" id="goal" name="goal" required>
+              <option value="" disabled selected>Select a goal&hellip;</option>
+              <option value="fat_loss">Fat Loss</option>
+              <option value="muscle_gain">Muscle &amp; Strength</option>
+              <option value="anti_ageing">Anti-Ageing Nutrition</option>
+              <option value="performance">Performance Optimisation</option>
+              <option value="disease_prevention">Disease Prevention</option>
+              <option value="general">General Wellbeing</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Tell us a little about yourself</label>
+          <textarea class="form-control textarea" id="message" name="message"
+            placeholder="Age, current diet, main challenges, any health conditions relevant to your goal&hellip;"
+            maxlength="1500" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn-form-submit">Book your Consultation</button>
+
+        <p id="form-feedback" class="form-feedback" hidden aria-live="polite"></p>
+
+        <p class="form-disclaimer">
+          By submitting this form you agree to our
+          <a href="{{ url_for('main.privacy') }}">Privacy Policy</a>.
+          Your information is never shared with third parties.
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
