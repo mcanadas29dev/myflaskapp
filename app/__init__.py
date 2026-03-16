@@ -39,7 +39,10 @@ def create_app() -> Flask:
     # ------------------------------------------------------------------
     # Configuración — nunca valores sensibles hardcodeados
     # ------------------------------------------------------------------
-    secret = os.environ.get("SECRET_KEY")
+    # f8373fec50e73ecae62941a6e1d1091195e6e089ec54524308d50da6aa12743d 
+    
+    #  secret = os.environ.get("SECRET_KEY")
+    secret = "f8373fec50e73ecae62941a6e1d1091195e6e089ec54524308d50da6aa12743d"
     if not secret:
         raise RuntimeError(
             "SECRET_KEY no está definida. "

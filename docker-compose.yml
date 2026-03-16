@@ -1,12 +1,22 @@
-version: "3"
+version: "3.9"
 
 services:
 
-  flaskapp:
-    env_file:
-      - .env
-    build: .
-    container_name: flask_healthwana
+  myflaskapp:
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: myflaskapp  
+
     restart: always
+
     ports:
       - "8000:8000"
+
+    volumes:
+      - .:/app
+
+    environment:
+      - FLASK_ENV=production
